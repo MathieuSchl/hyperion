@@ -1,0 +1,5 @@
+User: Joanna
+Subject: Tests de températures
+
+J'ai fait plusieurs tests pour garder l'oxygène produit par le générateur.
+La température optimale est -183°.

@@ -1,0 +1,3 @@
+Archives:           Dossier contenant toutes les données liées à la mission d'exploration dans l'espace
+rooms:              Dossier contenant un accès aux systèmes du vaisseau
+passenger_on_board: Dossier contenant des informations sur l'équipage du vaisseau

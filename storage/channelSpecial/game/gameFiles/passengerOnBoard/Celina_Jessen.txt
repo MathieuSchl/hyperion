@@ -1,0 +1,12 @@
+Celina A. Jessen (pilote):
+Sexe : F
+Date de naissance : 23 août 1982
+Pays : Danemark
+Mail : Celina.Jessen@superrito.com
+
+Préférence:
+Chiffre: [Missing data]
+Couleur: Rouge
+
+Description:
+Celina est le membre de l'équipage qui s'occupe du système de navigation

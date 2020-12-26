@@ -1,0 +1,14 @@
+{
+  "Reactor": {
+    "end": 6,
+    "emojisName": ["p8", "p4", "p7", "p7", "p8", "p5", "m8", "m4", "m4"]
+  },
+  "Navigation": {
+    "end": 7,
+    "emojisName": ["p4", "p6", "p9", "p6", "p8", "m4", "m5", "m5", "m8"]
+  },
+  "Oxygen": {
+    "end": 42,
+    "emojisName": ["p7", "p19", "p99", "p119", "p4", "p4", "m1", "m72", "m15", "m2"]
+  }
+}

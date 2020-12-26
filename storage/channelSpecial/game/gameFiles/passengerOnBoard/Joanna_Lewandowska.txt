@@ -1,0 +1,13 @@
+Joanna Lewandowska (médecin):
+Sexe : F
+Date de naissance : 2 janvier 1984
+Pays : Pologne
+Mail : Joanna.Lewandowska@dayrep.com
+
+Préférence:
+Chiffre: 5
+Couleur: Rose
+
+Description:
+Joanna est la personne qui va s'occuper de la santé de l'equipage.
+Elle réalise aussi des expériences et s'occupe de la production d'oxygène du vaisseau.

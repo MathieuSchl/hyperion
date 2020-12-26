@@ -1,0 +1,9 @@
+1 parsec = 1 case
+
+Le vaisseau ne se déplace qu'en ligne ou en colonne (pas de diagonale)
+
+Le vaisseau ne voit qu'en ligne ou en colonne (pas de diagonale)
+
+Sur un déplacement le vaisseau ne peut pas changer de direction. 
+Par exemple, si le vaisseau commence un déplacement vers la droite, 
+il doit continuer son déplacement vers la droite.

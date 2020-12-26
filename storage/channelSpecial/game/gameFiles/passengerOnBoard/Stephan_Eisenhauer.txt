@@ -1,0 +1,13 @@
+Stephan Eisenhauer (technicien):
+Sexe : H
+Date de naissance : [missing data]
+Pays : Allemagne
+Mail : Stephan.Eisenhauer@cuvox.de
+
+Préférence:
+Chiffre: 3
+Couleur: Bleu clair
+
+Description:
+Stephan est le technicien du vaisseau,
+il est en charge du fonctionnement du vaisseau et principalement du réacteur et des systèmes électriques.

@@ -1,0 +1,12 @@
+Bonjour a vous, agent,
+Nous sommes l'entreprise Giperspace et nous sommes une entreprise spécialisé dans la construction de transport spatial. 
+Nous avons dernièrement développé une nouvelle technologie appelée "saut dans l'hyperespace".
+Cette dernière permet, après cryogénisation du personnel de bord, de se déplacer à une vitesse jamais égalée, proche de celle de la lumière.
+
+Nous avons secrètement créé L'Hyperion, un vaisseau spatial dotée de cette technologie afin de réaliser des tests.
+Il y a quelques jours, notre vaisseau a réalisé un de ces sauts dans l'hyperespace.
+Toute la procédure de cryogénisation du personnel a correctement été mise en place.
+Cependant, quelques heures plus tard nous avons reçu un message de détresse venant du vaisseau, nous informant d'un défaut lors du saut.
+Nous n'avons aucune idée de leur position, nous savons simplement d'après le signal du vaisseau que le personnel est en vie, mais toujours cryogénisé.
+
+Votre mission est de vous connecter sur le réseau du vaisseau, comprendre se qu'il s'est passé et de faire revenir le vaisseau sur terre.

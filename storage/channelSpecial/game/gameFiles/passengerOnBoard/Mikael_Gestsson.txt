@@ -1,0 +1,12 @@
+Mikael Gestsson (capitaine):
+Sexe : [Missing data]
+Date de naissance : 4 mai 1977
+Pays : Islande
+Mail : Mikael.Gestsson@gustr.com
+
+Préférence:
+Chiffre: 9
+Couleur: Marron
+
+Description:
+Mikael est le capitaine du vaisseau. Il dirige l'équipages et gère les archives.
