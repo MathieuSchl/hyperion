@@ -19,10 +19,12 @@ module.exports.open = async (bot, idUser) => {
             "timeTimeLastRun": null,
             "textBestRun": null,
             "timeBestRun": null,
+            "nbRun": null,
             "textTimeLastRunTAS": null,
             "timeTimeLastRunTAS": null,
             "textBestRunTAS": null,
-            "timeBestRunTAS": null
+            "timeBestRunTAS": null,
+            "nbRunTAS": null
         }
         await bot.basicFunctions.get("userData").write(idUser, newData);
         return newData;
