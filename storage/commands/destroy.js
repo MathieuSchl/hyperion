@@ -4,19 +4,11 @@ const admin = ["210392675478667269"]
 
 module.exports.run = async (bot, message, args)=>{
     message.delete();
-    if (admin.includes(message.author.id)){
-        message.channel.send("Arrêt du bot")
-            .then(msg => {msg.delete({ timeout: 1500 })});
-        bot.user.setActivity("Arrêt en cours", {type: "WATCHING"});
-        await bot.basicFunctions.get("wait").run(2500);
-        bot.destroy();
-
-    }else{
-        message.channel.send("<@"+message.author.id+"> tu n'es pas autorisé à faire cela")
-            .then(msg => {
-                msg.delete({ timeout: 10000 })
-            });
-    }
+    message.channel.send("Arrêt du bot")
+        .then(msg => {msg.delete({ timeout: 1500 })});
+    bot.user.setActivity("Arrêt en cours", {type: "WATCHING"});
+    await bot.basicFunctions.get("wait").run(2500);
+    bot.destroy();
 };
 
 
