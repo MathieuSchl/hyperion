@@ -1,4 +1,5 @@
 runBot.js
+test.js
 storage/config.json
 storage/data/*
 storage/soundFunctions/data/*

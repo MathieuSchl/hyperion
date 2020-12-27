@@ -2,7 +2,7 @@ const config = require('../../config.json');
 const fs = require("fs");
 const passwordSystem = "Electrical";
 const system = passwordSystem+"_password";
-const passWord = "}hT?g?fHL";
+const passWord = "r(q]z]7c{";
 
 module.exports.run = async (bot, message, teamData) => {
     let channelMessages = message.channel.messages;

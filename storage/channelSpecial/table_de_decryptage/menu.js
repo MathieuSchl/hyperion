@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, teamData) => {
         .setColor('#0099ff');
     decryptageEmbed.setTitle("Table de decryptage");
 
-    decryptageEmbed.setDescription("Veuillez entrer votre nom de famille pour obtenir votre table de décryptage");
+    decryptageEmbed.setDescription("Veuillez entrer votre nom de famille pour obtenir votre table de décryptage\nLe processus de récupération de la table de décryptage prend quelques secondes (~10s)");
 
 
 
