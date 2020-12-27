@@ -9,9 +9,9 @@ module.exports.run = async (bot, message, args) => {
     exec('git pull', {
         cwd: config.location
     }, function (error, stdout, stderr) {
-        //console.log(error);
+        console.log(error);
         //console.log(stdout);
-        //console.log(stderr);
+        console.log(stderr);
         const stdoutSplit = stdout.split("\n")
         let msg = "";
         for (let index = 0; index < stdoutSplit.length; index++) {
