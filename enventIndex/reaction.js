@@ -163,6 +163,11 @@ async function reactionAction(bot, reaction, user, action) {
 
         bot.basicFunctions.get("scoreBoard").reaload(bot);
         bot.basicFunctions.get("eventLuncher").run(bot, teamData, reaction.message);
+
+        let chatChannel = await bot.channels.fetch(teamData.chat);
+        chatChannel.send("",{files: [
+            config.location+"/storage/channelSpecial/game/file/huitVert.png"
+          ]})
         return;
 
     } else if (reaction._emoji.name === "▶️") {
