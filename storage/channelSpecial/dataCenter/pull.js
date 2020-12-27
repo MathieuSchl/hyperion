@@ -1,18 +1,14 @@
 const { exec } = require('child_process');
+const config = require('../../config.json');
 
 
 module.exports.run = async (bot, message, args) => {
     message.delete();
-    message.channel.send("```Redémarage dans 5s```").then((msg) => {
-        msg.delete({
-            timeout: 5000
-        })
-    });
-    await bot.basicFunctions.get("wait").run(1000);
-    exec.exec('ls', function (error, stdout, stderr) {
-        console.log(error);
-        console.log(stdout);
-        console.log(stderr);
+     exec('git pull', {cwd: config.location}, function (error, stdout, stderr) {
+        //console.log(error);
+        //console.log(stdout);
+        //console.log(stderr);
+        message.channel.send("```"+stdout+"```").catch(()=>{message.channel.send("```Une grosse mise à jour a été faite```")});
     });
 };
 
