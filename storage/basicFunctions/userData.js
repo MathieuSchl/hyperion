@@ -10,21 +10,31 @@ module.exports.open = async (bot, idUser) => {
         return dataSpecialChannel;
     } catch (e) {
         const user = await bot.users.fetch(idUser);
-        const newData = {
-            "id": idUser,
-            "userTag": user.tag,
-            "textFirstTry": null,
-            "timeFirstTry": null,
-            "textTimeLastRun": null,
-            "timeTimeLastRun": null,
-            "textBestRun": null,
-            "timeBestRun": null,
-            "nbRun": null,
-            "textTimeLastRunTAS": null,
-            "timeTimeLastRunTAS": null,
-            "textBestRunTAS": null,
-            "timeBestRunTAS": null,
-            "nbRunTAS": null
+        let newData = {};
+        if (!user.bot) {
+            newData = {
+                "id": idUser,
+                "userTag": user.tag,
+                "textFirstTry": null,
+                "timeFirstTry": null,
+                "textTimeLastRun": null,
+                "timeTimeLastRun": null,
+                "textBestRun": null,
+                "timeBestRun": null,
+                "nbRun": null,
+                "textTimeLastRunTAS": null,
+                "timeTimeLastRunTAS": null,
+                "textBestRunTAS": null,
+                "timeBestRunTAS": null,
+                "nbRunTAS": null,
+                "botsOwner": []
+            }
+        }else{
+            newData = {
+                "id": idUser,
+                "userTag": user.tag,
+                "owner":null
+            }
         }
         await bot.basicFunctions.get("userData").write(idUser, newData);
         return newData;
