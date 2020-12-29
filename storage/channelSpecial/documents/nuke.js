@@ -1,5 +1,5 @@
 const config = require('../../config.json');
-const filePath = config.location + 'storage/channelSpecial/documents/Table_de_decryptage_Eisenhauer.pdf';
+const filePath = config.location + 'storage/channelSpecial/documents/Introduction_et_commandes.pdf';
 
 
 async function getMessageAfterNuke(bot) {
