@@ -1,8 +1,10 @@
+const config = require('../../config.json');
+const filePath = config.location + 'storage/channelSpecial/documents/Table_de_decryptage_Eisenhauer.pdf';
 
 
 async function getMessageAfterNuke(bot) {
-    mess = "Pour créer une partie, un joueur doit écrire le nom de l'équipe dans ce channel\n"+
-           "Ce joueur dois par la suite inviter les autres joueurs dans le salon \"inviter-des-joueurs\"";
+    mess = "Durant la partie, il est recommandé d'avoir ce document à porté de main\n" +
+        "Il peut toujours servir 😉";
     return mess;
 }
 
@@ -18,7 +20,9 @@ module.exports.run = async (bot, message, args) => {
         await messages.array().reverse().forEach(msg => {
             msg.delete().catch(() => {});
         });
-        await message.channel.send(await getMessageAfterNuke(bot)).then((msg) => {
+        await message.channel.send(await getMessageAfterNuke(bot), {
+            files: [filePath]
+        }).then((msg) => {
             msg.pin();
         })
         await bot.basicFunctions.get("wait").run(250);
