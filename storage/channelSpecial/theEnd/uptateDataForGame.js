@@ -1,6 +1,7 @@
 const config = require('../../config.json');
 const fs = require("fs");
 const idRole = "792128655409020948";//IdRole je l'ai fait
+const path = config.location + "storage/data/GlobaleData.json";
 
 
 async function meMeastiure(ms) {
@@ -70,11 +71,18 @@ module.exports.run = async (bot, message, teamData) => {
         if (teamData.gameType === "normal" && data.timeFirstTry == null){
             data.timeFirstTry=time;
             data.textFirstTry=textTime;
-
         }
 
         await bot.basicFunctions.get("userData").write(element, data);
     }
+
+    fichiers = fs.readFileSync(path);
+    let globaleData = JSON.parse(fichiers);
+
+    dataSpecialChannel.gameFinised++;
+
+    let donnees = JSON.stringify(globaleData);
+    fs.writeFileSync(path, donnees);
 
     return teamData;
 }
