@@ -80,7 +80,7 @@ module.exports.run = async (bot, message, teamData) => {
     fichiers = fs.readFileSync(path);
     let globaleData = JSON.parse(fichiers);
 
-    dataSpecialChannel.gameFinised++;
+    globaleData.gameFinised++;
 
     let donnees = JSON.stringify(globaleData);
     fs.writeFileSync(path, donnees);
