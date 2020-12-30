@@ -62,10 +62,11 @@ module.exports.run = async (bot, message, teamData) => {
     const textTime = await timeToString(await meMeastiure(time));
 
     for (let index = 0; index < teamData.players.length; index++) {
+        const element = teamData.players[index];
+        
         const player = await message.guild.members.fetch(element);
         player.roles.add(idRole).catch(()=>{console.log("le role je l'ai fini n'existe plus")});//donne le rôle je l'ai fini
 
-        const element = teamData.players[index];
         let data = await bot.basicFunctions.get("userData").open(bot, element);
 
         if (teamData.gameType === "normal" && data.timeFirstTry == null){

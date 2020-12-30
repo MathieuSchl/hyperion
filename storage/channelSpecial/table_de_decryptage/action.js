@@ -125,8 +125,10 @@ module.exports.run = async (bot, message, teamData) => {
     await bot.basicFunctions.get("wait").run(2000);
     try {
         if (tableName !== agentName) {
-            fs.unlinkSync(filePath);
-            fs.unlinkSync(pdfPath);
+            try{
+                fs.unlinkSync(filePath);
+                fs.unlinkSync(pdfPath);
+            }catch{}
         }
         //file removed
     } catch (err) {
