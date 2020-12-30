@@ -1,7 +1,7 @@
 const config = require("../config.json");
 const fs = require("fs");
 const guildId = "786341813530656828";
-const intervalFromChange = 5000;
+const intervalFromChange = 60000;
 let indexMess = 0;
 
 
@@ -43,13 +43,18 @@ async function getMessage(bot) {
     return [type, mess];
 }
 
+async function changeActivity(bot){
+    const res = await getMessage(bot);
+    bot.user.setActivity(res[1], {
+        type: res[0]
+    }).catch((e)=>{
+    });
+} 
+
 module.exports.run = async (bot) => {
+    changeActivity(bot);
     bot.setInterval(async function () {
-        const res = await getMessage(bot);
-        bot.user.setActivity(res[1], {
-            type: res[0]
-        }).catch((e)=>{
-        });
+        changeActivity(bot);
     }, intervalFromChange);
 }
 
