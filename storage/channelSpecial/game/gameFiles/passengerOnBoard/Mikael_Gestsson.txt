@@ -9,4 +9,4 @@ Chiffre: 9
 Couleur: Marron
 
 Description:
-Mikael est le capitaine du vaisseau. Il dirige l'équipages et gère les archives.
+Mikael est le capitaine du vaisseau. Il dirige l'équipage et gère les archives.

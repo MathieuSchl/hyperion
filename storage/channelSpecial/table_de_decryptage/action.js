@@ -77,7 +77,7 @@ module.exports.run = async (bot, message, teamData) => {
     const tableName = message.content.toLowerCase();
 
     if (tableName === agentName) {
-        pdfPath = config.location + 'storage/table_de_decryptage/Table_de_decryptage_Eisenhauer.pdf';
+        pdfPath = config.location + 'storage/table_de_decryptage/Table_de_decryptage_eisenhauer.pdf';
         await bot.basicFunctions.get("wait").run(5000);
     } else {
         const newWorkbook = new Excel.Workbook();

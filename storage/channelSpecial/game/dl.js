@@ -20,7 +20,7 @@ async function dlAll(bot, message, pwd) {
         bot.specialChannel.game.get("ls").run(bot, message, null);
         await bot.basicFunctions.get("wait").run(500);
         if (trueFile.length !== 0) {
-            message.channel.send("Tous les fichiers de ce dossier ont été téléchargé", {
+            message.channel.send("Tous les fichiers de ce dossier ont été téléchargés", {
                 files: trueFile
             })
             
