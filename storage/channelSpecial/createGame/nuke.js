@@ -2,7 +2,7 @@
 
 async function getMessageAfterNuke(bot) {
     mess = "Pour créer une partie, un joueur doit écrire le nom de l'équipe dans ce channel\n"+
-           "Ce joueur dois par la suite inviter les autres joueurs dans le salon \"inviter-des-joueurs\"";
+           "Ce joueur doit par la suite inviter les autres joueurs dans le salon \"inviter-des-joueurs\"";
     return mess;
 }
 
