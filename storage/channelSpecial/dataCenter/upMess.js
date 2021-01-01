@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
         const channel = await bot.channels.fetch("788867019289788457");
         await bot.specialChannel.createGame.get("nuke").run(bot, channel.lastMessage, null);
     }catch{
-        console.log("Channel documentation is deleted");
+        console.log("Channel CreateNew game is deleted");
     }
 };
 
