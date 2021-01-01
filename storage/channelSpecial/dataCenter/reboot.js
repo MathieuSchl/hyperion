@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args)=>{
     await bot.basicFunctions.get("wait").run(5500);
     bot.destroy();
     await bot.basicFunctions.get("wait").run(5000);
-    require('child_process').exec(`node ${config+location}/index.js`, function (msg) { console.log(msg) });
+    require('child_process').exec(`node ${config.location}/index.js`, function (msg) { console.log(msg) });
 };
 
 module.exports.help = {
