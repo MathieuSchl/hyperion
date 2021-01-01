@@ -28,6 +28,7 @@ module.exports.run = async (bot, guild, name, hostUser) => {
     await guild.roles.create({
         data: {
             name: "Equipe " + name,
+            mentionable : true
         }
     }).then((role) => {
         roleId = role.id;

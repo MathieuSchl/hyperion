@@ -20,9 +20,10 @@ module.exports.run = async (bot, message, args) => {
                 msg = msg + element + "\n";
             } else {
                 message.channel.send("```" + msg + "```");
-                msg = "";
+                msg = element;
             }
         }
+        message.channel.send("```" + msg + "```");
     });
 };
 
