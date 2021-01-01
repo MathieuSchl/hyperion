@@ -11,7 +11,7 @@ async function getMessage(bot) {
 
     //WATCHING PLAYING
     const guilds = await bot.guilds.fetch(guildId);
-    
+
     fichiers = fs.readFileSync(config.location + "/storage/data/GlobaleData.json");
     let globalData = JSON.parse(fichiers);
 
@@ -43,19 +43,14 @@ async function getMessage(bot) {
     return [type, mess];
 }
 
-async function changeActivity(bot){
-    const res = await getMessage(bot);
-    bot.user.setActivity(res[1], {
-        type: res[0]
-    }).catch((e)=>{
-    });
-} 
+async function changeActivity(bot) {
+    bot.user.setActivity("En maintenance", {
+        type: "WATCHING"
+    }).catch((e) => {});
+}
 
 module.exports.run = async (bot) => {
     changeActivity(bot);
-    bot.setInterval(async function () {
-        changeActivity(bot);
-    }, intervalFromChange);
 }
 
 module.exports.help = {
