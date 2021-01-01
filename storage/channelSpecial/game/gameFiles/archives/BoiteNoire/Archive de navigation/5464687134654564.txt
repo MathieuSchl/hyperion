@@ -1,5 +1,5 @@
 Système:
-Alerte, colision avec un astéroïde détectée.
-Un parsec à été parcouru pour sortir du champs d'astéroïde.
+Alerte, collision avec un astéroïde détectée.
+Un parsec a été parcouru pour sortir du champ d'astéroïde.
 Immobilisation du vaisseau.
 Le personnel est cryogénisé, un message de détresse a été envoyé.
