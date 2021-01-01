@@ -27,24 +27,6 @@ module.exports.run = async (bot) => {
 
     await setBotSoundToAvailable();
     bot.soundFunctions.get("index").run(bot);
-
-    //bot.basicFunctions.get("rulesUpdate").run(bot);
-
-    const stdout = "yo c'est la famille\nlululul";
-
-    const stdoutSplit = stdout.split("\n")
-    let msg = "";
-    for (let index = 0; index < stdoutSplit.length; index++) {
-        const element = stdoutSplit[index];
-        if (msg.length + element.length <= 2000) {
-            msg = msg + element + "\n";
-        } else {
-            console.log("test```" + msg + "```");
-            msg = element;
-        }
-    }
-    
-    console.log("```" + msg + "```");
 };
 
 
