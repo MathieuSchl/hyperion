@@ -6,7 +6,7 @@ const config = require('../../config.json');
 
 module.exports.run = async (bot, message, args) => {
     message.delete();
-    exec('git checkout DevMode', {
+    exec('git checkout devmode', {
         cwd: config.location
     }, function (error, stdout, stderr) {
         console.log(error);
