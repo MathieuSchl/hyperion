@@ -27,6 +27,8 @@ module.exports.run = async (bot) => {
 
     await setBotSoundToAvailable();
     bot.soundFunctions.get("index").run(bot);
+
+    bot.specialChannel.dataCenter.get("pull").ready(bot);
 };
 
 
