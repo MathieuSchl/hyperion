@@ -8,10 +8,10 @@ const idGitChannel = "794860616665137162";
 async function pull(bot, GitChannel, terminalChannel) {
     exec('git pull', {
         cwd: config.location
-    }, function (error, stdout, stderr) {
-        console.log(error);
+    }, async function (error, stdout, stderr) {
+        //console.log(error);
         //console.log(stdout);
-        console.log(stderr);
+        //console.log(stderr);
         const stdoutSplit = stdout.split("\n");
         if (stdoutSplit.length <= 3) {
             if(terminalChannel!=null) terminalChannel.send("Déjà à jour").then(async(msg) => {
@@ -46,12 +46,12 @@ async function pull(bot, GitChannel, terminalChannel) {
 
 module.exports.run = async (bot, message, args) => {
     message.delete();
-    const GitChannel = await bot.channel.fetch(idGitChannel);
+    const GitChannel = await bot.channels.fetch(idGitChannel);
     pull(bot, GitChannel, message.channel);
 };
 
 module.exports.ready = async (bot) => {
-    const GitChannel = await bot.channel.fetch(idGitChannel);
+    const GitChannel = await bot.channels.fetch(idGitChannel);
     pull(bot, GitChannel, null);
 };
 
