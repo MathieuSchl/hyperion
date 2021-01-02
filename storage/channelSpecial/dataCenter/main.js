@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     message.delete();
     exec('git checkout main', {
         cwd: config.location
-    }, function (error, stdout, stderr) {
+    }, async function (error, stdout, stderr) {
         console.log(error);
         //console.log(stdout);
         console.log(stderr);
