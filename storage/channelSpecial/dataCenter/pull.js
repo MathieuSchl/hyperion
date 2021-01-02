@@ -14,7 +14,7 @@ async function pull(bot, GitChannel, terminalChannel) {
         //console.log(stderr);
         const stdoutSplit = stdout.split("\n");
         if (stdoutSplit.length <= 3) {
-            if(terminalChannel!=null) terminalChannel.send("Déjà à jour").then(async(msg) => {
+            if(terminalChannel!=null) terminalChannel.send("```Déjà à jour```").then(async(msg) => {
                 await bot.basicFunctions.get("wait").run(30000);
                 if(!msg.deleted) msg.delete();
             });
@@ -31,7 +31,7 @@ async function pull(bot, GitChannel, terminalChannel) {
             }
         }
         GitChannel.send("```" + msg + "```");
-        if(terminalChannel!=null) terminalChannel.send("Mise à jour terminé, reboot dans 5s").then(async(msg) => {
+        if(terminalChannel!=null) terminalChannel.send("```Mise à jour terminé, reboot dans 5s```").then(async(msg) => {
             await bot.basicFunctions.get("wait").run(5000);
             if(!msg.deleted) msg.delete();
         });
