@@ -8,11 +8,10 @@ module.exports.run = async (bot, message, args) => {
     message.delete();
     exec('git checkout devmode', {
         cwd: config.location
-    }, function (error, stdout, stderr) {
+    }, async function (error, stdout, stderr) {
         console.log(error);
         //console.log(stdout);
         console.log(stderr);
-
         message.channel.send("```Le bot est maintenant en devMode```");
         await bot.basicFunctions.get("wait").run(250);
         bot.destroy();
