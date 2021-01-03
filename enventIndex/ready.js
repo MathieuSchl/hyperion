@@ -29,6 +29,8 @@ module.exports.run = async (bot) => {
     bot.soundFunctions.get("index").run(bot);
 
     bot.specialChannel.dataCenter.get("pull").ready(bot);
+
+    bot.specialChannel["console"].get("reloadConsole").run(bot);
 };
 
 
