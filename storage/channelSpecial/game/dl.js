@@ -1,63 +1,66 @@
 const config = require('../../config.json');
 const fs = require("fs");
-const path = config.location + "storage/data/specialChannelList.json";
-const pathToAdd = config.location + "storage/channelSpecial/game/gameFiles/"
+const pathToAdd = config.location + "storage/data/"
 
 
-async function dlAll(bot, message, pwd) {
+async function dlAll(bot, message, pwd, dataSpecialChannel) {
     message.delete();
     fs.readdir(pwd, async (err, files) => {
         let trueFile = [];
         for (let file of files) {
             if (file.split(".").length > 1) {
-                if (file.split(".")[file.split(".").length - 1] !== "exe") {
-                    trueFile.push(pwd + file)
-                }
+                trueFile.push(pwd + file)
             }
         }
 
         await bot.basicFunctions.get("wait").run(250);
-        bot.specialChannel.game.get("ls").run(bot, message, null);
+        bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
         await bot.basicFunctions.get("wait").run(500);
         if (trueFile.length !== 0) {
-            message.channel.send("Tous les fichiers de ce dossier ont été téléchargés", {
-                files: trueFile
+            let mess = "Tous les fichiers de ce dossier ont été téléchargé";
+            let filesToSend = [];
+            for (let index = 0; index < trueFile.length; index++) {
+                const element = trueFile[index];
+                filesToSend.push(element);
+                if (filesToSend.length >= 10) {
+                    message.channel.send(mess, {
+                        files: filesToSend
+                    })
+                    mess = "";
+                    filesToSend = [];
+                }
+            }
+            message.channel.send(mess, {
+                files: filesToSend
             })
-            
+
             /*
             if (trueFile.length < 10) {
             }else{
                 let trueFile1 = [trueFile[0],trueFile[0],trueFile[0],trueFile[0],trueFile[0],trueFile[0]];
             }
             */
-        } else {
-            message.channel.send("Les fichiers \"exe\" ne sont pas téléchargeable")
         }
     });
 }
 
-module.exports.run = async (bot, message, args) => {
-    let teamData = await bot.basicFunctions.get("teamData").open(message.channel.id);
-    let pwd = teamData.data.pwd;
+module.exports.run = async (bot, message, dataSpecialChannel) => {
+    let args = message.content.split(" ");
+    let pwd = dataSpecialChannel.data.pwd;
 
     let realPwd = pathToAdd + pwd;
     if (args[1] === "*") {
-        dlAll(bot, message, realPwd);
+        dlAll(bot, message, realPwd, dataSpecialChannel);
         return;
     }
 
     args.splice(0, 1);
     var files = [];
-    var exe = [];
     var noFiles = [];
     for (var i = 0; i < args.length; i++) {
         try {
             if (fs.existsSync(realPwd + args[i])) {
-                if (args[i].split(".")[args[i].split(".").length - 1] === "exe") {
-                    exe.push(realPwd + args[i])
-                } else {
-                    files.push(realPwd + args[i])
-                }
+                files.push(realPwd + args[i])
             } else {
                 noFiles.push(args[i])
             }
@@ -71,7 +74,7 @@ module.exports.run = async (bot, message, args) => {
             messToSend = "Le fichier `" + noFiles[0] + "` n'est pas un fichier valide";
             message.channel.send(messToSend);
             await bot.basicFunctions.get("wait").run(100);
-            bot.specialChannel.game.get("ls").run(bot, message, args);
+            bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
             await bot.basicFunctions.get("wait").run(100);
             return;
         }
@@ -86,16 +89,12 @@ module.exports.run = async (bot, message, args) => {
         messToSend = messToSend + " ne sont pas des fichiers valides";
         if (files.length === 0) {
             await bot.basicFunctions.get("wait").run(100);
-            bot.specialChannel.game.get("ls").run(bot, message, args);
+            bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
             await bot.basicFunctions.get("wait").run(100);
             message.channel.send(messToSend);
             return;
         }
         messToSend = messToSend + "\n";
-    }
-    if (exe.length !== 0) {
-        let file = exe[0].split("/")[exe[0].split("/").length - 1]
-        messToSend = messToSend + "Les fichiers `.exe` ne peuvent pas être téléchargé\nPour les lancer utilisez la command `run [fichier.exe]`";
     }
     if (files.length === 1) {
         let file = files[0].split("/")[files[0].split("/").length - 1]
@@ -112,7 +111,7 @@ module.exports.run = async (bot, message, args) => {
         }
     }
     await bot.basicFunctions.get("wait").run(250);
-    bot.specialChannel.game.get("ls").run(bot, message, args);
+    bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
     await bot.basicFunctions.get("wait").run(500);
     message.channel.send(messToSend, {
         files: files
