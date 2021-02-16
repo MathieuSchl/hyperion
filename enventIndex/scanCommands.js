@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require('../storage/config.json');
-const banFolder = ["channelSpecial","messageSpecial"];
+const banFolder = ["data", "specialGuilds", "specialTextChannel", "specialVoiceChannels", "channelSpecial", "messageSpecial"];
 
 function scanFolder(bot, path) {
     let folderName = path.split("/");
@@ -35,7 +35,8 @@ function scanFolder(bot, path) {
 }
 
 module.exports.run = async (bot) => {
-    scanFolder(bot, config.location + "/enventIndex/");
+    await scanFolder(bot, config.location + "/../dataBase/");
+    await scanFolder(bot, config.location + "/enventIndex/");
 
     await fs.readdir(config.location + "/storage/", async(err, folders) => {
         for (let i = 0; i < folders.length; i++) {

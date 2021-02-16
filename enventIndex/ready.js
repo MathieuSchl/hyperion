@@ -1,6 +1,3 @@
-const {
-    get
-} = require("request");
 const config = require("../storage/config.json");
 const fs = require("fs");
 const path = config.location + "storage/soundFunctions/data/";
