@@ -26,7 +26,7 @@ async function generateRessMess(bot, score, teamData) {
     let fichiers = fs.readFileSync(pathElectricalGame);
     let dmData = JSON.parse(fichiers);
 
-    let resMess = "Ce système est alimententé avec " + score + " unités d'énergie\n";
+    let resMess = "Ce système est alimenté avec " + score + " unités d'énergie\n";
     let correct = false;
     if (teamData.data[system].systemActive === "Reactor") {
         let finalValue = dmData["Reactor"].end;
