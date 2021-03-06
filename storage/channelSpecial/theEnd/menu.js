@@ -28,9 +28,9 @@ module.exports.run = async (bot, message, teamData) => {
         .setColor('#28FF00');
     winEmbed.setTitle("Mission accomplie!");
     winEmbed.setTimestamp();
-    winEmbed.setDescription("Le vaisseau \"Hyperion\" a entamé son voyage du retour en toute sécurité.\n" +
-        "Le personnel à son bord sera de retour sur Terre dans 1 mois 3 jours et 7 heures.\n" +
-        "Félicitation votre mission est accomplie");
+    winEmbed.setDescription("Le vaisseau \"Hyperion\" a entamé son voyage de retour en toute sécurité.\n" +
+        "Le vaisseau devrait bientôt atterrir aux coordonnées `N 48°54.897' E 2°8.115'`.\n" +
+        "Félicitations votre mission est accomplie");
     message.channel.send(winEmbed);
     await bot.basicFunctions.get("wait").run(20000);
 
