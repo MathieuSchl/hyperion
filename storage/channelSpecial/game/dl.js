@@ -1,6 +1,6 @@
 const config = require('../../config.json');
 const fs = require("fs");
-const pathToAdd = config.location + "storage/data/"
+const pathToAdd = config.location + "storage/channelSpecial/game/gameFiles/";
 
 
 async function dlAll(bot, message, pwd, dataSpecialChannel) {
@@ -14,7 +14,7 @@ async function dlAll(bot, message, pwd, dataSpecialChannel) {
         }
 
         await bot.basicFunctions.get("wait").run(250);
-        bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
+        bot.specialChannel.game.get("ls").run(bot, message, dataSpecialChannel);
         await bot.basicFunctions.get("wait").run(500);
         if (trueFile.length !== 0) {
             let mess = "Tous les fichiers de ce dossier ont été téléchargé";
@@ -44,7 +44,8 @@ async function dlAll(bot, message, pwd, dataSpecialChannel) {
     });
 }
 
-module.exports.run = async (bot, message, dataSpecialChannel) => {
+module.exports.run = async (bot, message, dataSpecialChanne) => {
+    let dataSpecialChannel = await bot.basicFunctions.get("teamData").open(message.channel.id);
     let args = message.content.split(" ");
     let pwd = dataSpecialChannel.data.pwd;
 
@@ -74,7 +75,7 @@ module.exports.run = async (bot, message, dataSpecialChannel) => {
             messToSend = "Le fichier `" + noFiles[0] + "` n'est pas un fichier valide";
             message.channel.send(messToSend);
             await bot.basicFunctions.get("wait").run(100);
-            bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
+            bot.specialChannel.game.get("ls").run(bot, message, dataSpecialChannel);
             await bot.basicFunctions.get("wait").run(100);
             return;
         }
@@ -89,7 +90,7 @@ module.exports.run = async (bot, message, dataSpecialChannel) => {
         messToSend = messToSend + " ne sont pas des fichiers valides";
         if (files.length === 0) {
             await bot.basicFunctions.get("wait").run(100);
-            bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
+            bot.specialChannel.game.get("ls").run(bot, message, dataSpecialChannel);
             await bot.basicFunctions.get("wait").run(100);
             message.channel.send(messToSend);
             return;
@@ -111,7 +112,7 @@ module.exports.run = async (bot, message, dataSpecialChannel) => {
         }
     }
     await bot.basicFunctions.get("wait").run(250);
-    bot.specialTextChannel.dataCenter.get("ls").run(bot, message, dataSpecialChannel);
+    bot.specialChannel.game.get("ls").run(bot, message, dataSpecialChannel);
     await bot.basicFunctions.get("wait").run(500);
     message.channel.send(messToSend, {
         files: files

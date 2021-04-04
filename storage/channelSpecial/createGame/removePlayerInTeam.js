@@ -27,7 +27,6 @@ module.exports.run = async (bot, playerId, gameId, byHost) => {
         const removePlayerChannel = await bot.channels.fetch(teamData.removePlayer)
 
         const permissionsInvite = invitePlayerChannel.permissionOverwrites.get(playerId);
-        console.log(teamData.players[0])
         permissionsInvite.id = teamData.players[0];
         permissionsInvite.update(permissionsInvite);
 

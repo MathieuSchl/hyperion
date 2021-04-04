@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, teamData) => {
         let i = 0;
         if (Array.from(messages).length < 3) {
             bot.specialChannel[passwordSystem].get("firstTime").run(bot, message);
-            return
+            return;
         }
         messages.array().reverse().forEach(msg => {
             if (i >= 2) {
