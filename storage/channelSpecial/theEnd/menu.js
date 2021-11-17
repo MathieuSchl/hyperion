@@ -32,7 +32,6 @@ module.exports.run = async (bot, message, teamData) => {
         "Le vaisseau devrait bientôt atterrir aux coordonnées `N 48°54.897' E 2°8.115'`.\n" +
         "Félicitations votre mission est accomplie");
     message.channel.send(winEmbed);
-    await bot.basicFunctions.get("wait").run(20000);
 
     let startingTime = "";
     try {
@@ -95,6 +94,21 @@ module.exports.run = async (bot, message, teamData) => {
         time = "ERROR";
     }
 
+    bot.channels.fetch("910468007338340352").then(async function (channel) {
+        const scoreEmbed = new Discord.MessageEmbed()
+            .setColor('RANDOM');
+        scoreEmbed.setTitle("Equipe " + teamData.data.teamName);
+        scoreEmbed.setDescription("```\n" +
+            "La partie à commencé le " + startingTime + "\n" +
+            "La partie à été terminée le " + endingTime + "\n" +
+            "La durée totale de la partie est de : " + time + "\n" +
+            "\n```");
+        message.channel.send(scoreEmbed);
+    }).catch(async function () {
+        console.log("Result channel is not defined");
+    })
+
+    await bot.basicFunctions.get("wait").run(20000);
     const scoreEmbed = new Discord.MessageEmbed()
         .setColor('#F4FF00');
     scoreEmbed.setTitle("Statistiques de la partie");
