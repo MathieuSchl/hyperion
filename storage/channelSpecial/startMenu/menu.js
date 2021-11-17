@@ -32,7 +32,7 @@ module.exports.run = async (bot, idChannel) => {
     if (data.gameStarted) {
         startEmbed.setColor('#28FF00');
         startEmbed.setTitle("Préparez vous au départ");
-        startEmbed.setDescription("Lorsque vous êtes prêt cliquez sur ✅\n" +
+        startEmbed.setDescription("Lorsque vous êtes prêt cliquez sur ✅ (tous les joueurs doivent cliquer sur la réaction pour lancer la partie)\n" +
             "Veuillez d'abord vérifier que tous les membres de votre équipes sont présents dans la liste suivante:");
         startEmbed.setDescription(startEmbed.description + "```\n");
         startEmbed.setDescription(startEmbed.description + await getAllPlayers(bot,idChannel));

@@ -101,7 +101,7 @@ async function reactionAction(bot, reaction, user, action) {
                     }, 10000)
                 })
                 return;
-            };
+            } else if ((teamData.players.length + 1) < reaction.count) return;
 
             const invitePlayerChannel = await bot.channels.fetch(teamData.invitePlayer)
             const allPermissionsInvite = invitePlayerChannel.permissionOverwrites.filter(o => o.id !== teamData.players[0]).array();
@@ -165,9 +165,11 @@ async function reactionAction(bot, reaction, user, action) {
         bot.basicFunctions.get("eventLuncher").run(bot, teamData, reaction.message);
 
         let chatChannel = await bot.channels.fetch(teamData.chat);
-        chatChannel.send("",{files: [
-            config.location+"/storage/channelSpecial/game/file/huitVert.png"
-          ]})
+        chatChannel.send("", {
+            files: [
+                config.location + "/storage/channelSpecial/game/file/huitVert.png"
+            ]
+        })
         return;
 
     } else if (reaction._emoji.name === "▶️") {
