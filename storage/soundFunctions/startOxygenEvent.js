@@ -5,6 +5,7 @@ const path = config.location + "storage/soundFunctions/data/";
 module.exports.run = async (bot,idChannel) => {
     let teamData = await bot.basicFunctions.get("teamData").open(idChannel);
     teamData.data.game_event.oxygen = true;
+    teamData.data.oxygen_system.reserve = 2;
     await bot.basicFunctions.get("teamData").write(idChannel,teamData);
 }
 
