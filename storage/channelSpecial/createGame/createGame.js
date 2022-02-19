@@ -107,7 +107,7 @@ module.exports.run = async (bot, guild, name, hostUser) => {
     let invitePlayerChannelId = null;
     await guild.channels.create("🔎╿Inviter des joueurs", hostOptions).then(channel => {
         channel.send("<@" + hostUser.id + ">").then(msg => msg.delete());
-        channel.send("Pour inviter un joueur veuillez le tagger dans ce channel\nEx: <@" + bot.user.id + ">");
+        channel.send("Pour inviter un joueur veuillez écrire son pseudo dans ce channel\nEx: <@" + bot.user.id + ">");
         invitePlayerChannelId = channel.id;
     })
 

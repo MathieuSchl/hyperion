@@ -29,7 +29,6 @@ module.exports.run = async (bot, message, teamData) => {
     winEmbed.setTitle("Mission accomplie!");
     winEmbed.setTimestamp();
     winEmbed.setDescription("Le vaisseau \"Hyperion\" a entamé son voyage de retour en toute sécurité.\n" +
-        "Le vaisseau devrait bientôt atterrir aux coordonnées `N 48°54.897' E 2°8.115'`.\n" +
         "Félicitations votre mission est accomplie");
     message.channel.send(winEmbed);
 

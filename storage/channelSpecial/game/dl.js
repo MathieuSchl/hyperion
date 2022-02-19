@@ -21,7 +21,9 @@ async function dlAll(bot, message, pwd, dataSpecialChannel) {
             let filesToSend = [];
             for (let index = 0; index < trueFile.length; index++) {
                 const element = trueFile[index];
-                filesToSend.push(element);
+                const elementSplited = element.split("/");
+                const extention = elementSplited[elementSplited.length - 1].split(".");
+                if (extention[extention.length - 1] !== "exe") filesToSend.push(element);
                 if (filesToSend.length >= 10) {
                     message.channel.send(mess, {
                         files: filesToSend
@@ -33,13 +35,6 @@ async function dlAll(bot, message, pwd, dataSpecialChannel) {
             message.channel.send(mess, {
                 files: filesToSend
             })
-
-            /*
-            if (trueFile.length < 10) {
-            }else{
-                let trueFile1 = [trueFile[0],trueFile[0],trueFile[0],trueFile[0],trueFile[0],trueFile[0]];
-            }
-            */
         }
     });
 }
