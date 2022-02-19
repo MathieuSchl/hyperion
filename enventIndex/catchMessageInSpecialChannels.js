@@ -60,7 +60,7 @@ module.exports.run = async (bot) => {
                 bot.channels.fetch(dataSpecialMessage.channel).then(async function (channel) {
                     await channel.messages.fetch();
                 }).catch(function (err) {
-                    console.log("Channel " + theChannel + " does not exist");
+                    console.log("Channel " + dataSpecialMessage.channel + " does not exist");
                 })
             }
             resolve();
