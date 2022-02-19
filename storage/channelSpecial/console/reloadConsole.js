@@ -1,16 +1,16 @@
 const config = require("../../config.json");
 const fs = require("fs");
-const path = config.location+"ConsoleFile.txt";
+const path = config.location + "log/ConsoleFile.txt";
 const idChannel = "795218698435690507";
 
 
 module.exports.run = async (bot) => {
     const channel = await bot.channels.fetch(idChannel);
-    await bot.basicFunctions.get("deleteAll").run(bot,channel);
+    await bot.basicFunctions.get("deleteAll").run(bot, channel);
 
     fs.readFile(path, 'utf8', function (err, data) {
         if (err) throw err;
-        
+
         const dataSplit = data.split("\n");
         let msg = "";
         for (let index = 0; index < dataSplit.length; index++) {
