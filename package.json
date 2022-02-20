@@ -4,6 +4,7 @@
   "description": "This is an escape game on discord",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js > log/ConsoleFile.txt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
