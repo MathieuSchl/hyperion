@@ -1,6 +1,6 @@
 const config = require("../../config.json");
 const fs = require("fs");
-const path = config.location + "ConsoleFile.txt";
+const path = config.location + "log/ConsoleFile.txt";
 const idChannel = "795218698435690507";
 
 
