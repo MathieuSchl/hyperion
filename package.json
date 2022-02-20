@@ -1,0 +1,27 @@
+{
+  "name": "hyperion",
+  "version": "1.0.0",
+  "description": "This is an escape game on discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathieuSchl/hyperion.git"
+  },
+  "author": "CodyIsTheSenate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MathieuSchl/hyperion/issues"
+  },
+  "homepage": "https://github.com/MathieuSchl/hyperion#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "discord.js": "^12.5.3",
+    "exceljs": "^4.3.0",
+    "fs": "^0.0.1-security",
+    "opusscript": "^0.0.8",
+    "request": "^2.88.2"
+  }
+}

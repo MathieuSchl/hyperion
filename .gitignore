@@ -1,6 +1,7 @@
 ConsoleFile.txt
 runBot.js
 test.js
+node_modules
 storage/config.json
 storage/data/*
 storage/soundFunctions/data/*
