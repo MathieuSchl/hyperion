@@ -4,7 +4,7 @@
 
 #docker build -t hyperion .
 
-docker run -itd\
+docker run -itd \
   --name hyperion \
   --restart=always \
   -v /home/debian/hyperion/storage/data:/home/node/hyperion/storage/data \

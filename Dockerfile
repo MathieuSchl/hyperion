@@ -1,7 +1,7 @@
 FROM node:14.19.0
 
-RUN mkdir /home/node/hyperion
+COPY ./package.json /home/node/hyperion/package.json
 WORKDIR "/home/node/hyperion"
-RUN npm i discord.js@12.5.3 fs request exceljs @discordjs/opus opusscript
+RUN npm i
 COPY . /home/node/hyperion
-CMD [ "/bin/bash","-c","node index.js > log/ConsoleFile.txt" ]
+CMD [ "/bin/bash","-c","npm start" ]

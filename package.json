@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MathieuSchl/hyperion#readme",
   "dependencies": {
+    "ffmpeg-static": "^4.4.1",
     "@discordjs/opus": "^0.5.3",
     "discord.js": "^12.5.3",
     "exceljs": "^4.3.0",
